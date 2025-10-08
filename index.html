@@ -42,7 +42,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
+      padding: 12px 20px;
     }
 
     .logo {
@@ -55,7 +55,7 @@
     nav a {
       color: var(--cinza);
       text-decoration: none;
-      margin-left: 20px;
+      margin-left: 25px;
       font-size: 1rem;
       transition: color 0.3s ease;
     }
@@ -179,24 +179,90 @@
     }
 
     /* ======== RESPONSIVO ======== */
+    @media (max-width: 900px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      nav a {
+        margin: 0 10px;
+        font-size: 0.95rem;
+      }
+    }
+
     @media (max-width: 768px) {
+      main {
+        margin-top: 90px;
+        padding: 10px;
+      }
+
       .section {
         flex-direction: column;
         text-align: center;
-        padding: 30px 20px;
+        padding: 25px 20px;
+        margin-bottom: 50px;
       }
 
       .section.reverse {
         flex-direction: column;
       }
 
+      .section img {
+        max-width: 320px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        text-align: left;
+        line-height: 1.5;
+      }
+
+      .section.agenda p {
+        text-align: center;
+      }
+
+      .whatsapp-link {
+        width: 80%;
+        font-size: 1rem;
+      }
+
+      .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        font-size: 26px;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 1.1rem;
+      }
+
       nav a {
-        margin-left: 10px;
+        font-size: 0.9rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      p {
         font-size: 0.95rem;
       }
 
-      .text p {
-        text-align: left;
+      .section {
+        padding: 20px 15px;
+      }
+
+      .section img {
+        max-width: 280px;
       }
     }
   </style>
