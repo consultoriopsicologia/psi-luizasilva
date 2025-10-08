@@ -5,45 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Psicóloga Luiza Silva</title>
   <style>
-    /* ======== ESTILOS GERAIS ======== */
+    :root {
+      --lilas: #c8a2c8;
+      --lilas-claro: #f3e9f5;
+      --branco: #ffffff;
+      --cinza: #555555;
+    }
+
     * {
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-family: "Poppins", sans-serif;
       margin: 0;
-      padding: 0;
+      background-color: var(--lilas-claro);
+      color: var(--cinza);
       line-height: 1.6;
-      background-color: #fafafa;
-      color: #333;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--branco);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      font-weight: 600;
+      color: var(--lilas);
+      font-size: 1.3rem;
+      letter-spacing: 0.5px;
+    }
+
+    nav a {
+      color: var(--cinza);
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--lilas);
     }
 
     main {
       max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px;
+      margin: 100px auto 0 auto;
+      padding: 20px;
     }
 
-    h2 {
-      color: #4e4e4e;
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-size: 1.05rem;
-      text-align: justify;
-    }
-
-    /* ======== SEÇÕES ======== */
     .section {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 60px;
+      gap: 40px;
+      margin-bottom: 80px;
       flex-wrap: wrap;
+      background-color: var(--branco);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     .section.reverse {
@@ -53,14 +89,13 @@
     .section img {
       width: 100%;
       max-width: 400px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       transition: transform 0.3s ease;
     }
 
     .section img:hover {
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
 
     .text {
@@ -68,27 +103,65 @@
       min-width: 300px;
     }
 
-    /* ======== RODAPÉ ======== */
+    h2 {
+      color: var(--lilas);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      text-align: justify;
+    }
+
     footer {
       text-align: center;
-      background-color: #f1f1f1;
       padding: 20px;
-      font-size: 0.95rem;
-      color: #555;
+      background-color: var(--branco);
+      color: #777;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+    }
+
+    /* ======== BOTÃO WHATSAPP ======== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      z-index: 1001;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #1ebe5d;
     }
 
     @media (max-width: 768px) {
       .section {
         flex-direction: column;
         text-align: center;
+        padding: 30px 20px;
       }
 
       .section.reverse {
         flex-direction: column;
       }
 
-      .section img {
-        max-width: 100%;
+      nav a {
+        margin-left: 10px;
+        font-size: 0.95rem;
       }
 
       .text p {
@@ -99,37 +172,54 @@
 </head>
 
 <body>
+
+  <!-- ======== CABEÇALHO ======== -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">Luiza Silva | Psicóloga</div>
+      <nav>
+        <a href="#sobre">Sobre Mim</a>
+        <a href="#trabalho">Meu Trabalho</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======== CONTEÚDO PRINCIPAL ======== -->
   <main>
-    <!-- Primeira seção: imagem esquerda, texto direita -->
-    <div class="section">
+    <section id="sobre" class="section">
       <img src="imagem1.jpg" alt="Psicóloga Luiza Silva">
       <div class="text">
         <h2>Sobre Mim</h2>
         <p>
-          Olá, meu nome é <strong>Luiza Silva</strong>. Durante meus anos de atuação como psicóloga, tenho realizado, acolhido e atendido o público adolescente e adulto com base na escuta qualificada, construção de vínculo terapêutico e condução de planos de cuidado individualizado. 
-          Meu propósito é oferecer um cuidado humanizado e colaborativo que promova saúde e bem-estar, alinhado a valores que visam ampliar o acesso à saúde mental de qualidade.
+          Olá, meu nome é <strong>Luiza Silva</strong>. Durante meus anos de atuação como psicóloga, tenho acolhido adolescentes e adultos com base na escuta qualificada, vínculo terapêutico e planos de cuidado individualizados.
+          Meu propósito é oferecer um cuidado humanizado e colaborativo que promova saúde emocional e bem-estar, ampliando o acesso à saúde mental de qualidade.
         </p>
       </div>
-    </div>
+    </section>
 
-    <!-- Segunda seção: texto esquerda, imagem direita -->
-    <div class="section reverse">
+    <section id="trabalho" class="section reverse">
       <img src="imagem2.jpg" alt="Terapia Cognitivo-Comportamental">
       <div class="text">
         <h2>Meu Trabalho</h2>
         <p>
-          Meu trabalho como psicóloga é baseado na <strong>Terapia Cognitivo-Comportamental (TCC)</strong>. 
-          A TCC é um modelo de terapia focada no momento presente, com sessões estruturadas e metas específicas para o tratamento. 
-          Trabalhamos a compreensão e aceitação das emoções, a modificação de comportamentos prejudiciais e a reinterpretação da realidade, 
-          buscando um olhar mais realista e saudável sobre a vida.
+          Meu trabalho é fundamentado na <strong>Terapia Cognitivo-Comportamental (TCC)</strong>, um modelo terapêutico centrado no presente que busca compreender e transformar pensamentos e comportamentos disfuncionais.
+          A partir de um processo colaborativo, ajudamos o paciente a desenvolver novas formas de lidar com emoções, pensamentos e situações do cotidiano, promovendo equilíbrio e autoconhecimento.
         </p>
       </div>
-    </div>
+    </section>
   </main>
 
+  <!-- ======== RODAPÉ ======== -->
   <footer>
-    © 2025 Luiza Silva | Psicóloga CRP ativo
+    © 2025 Luiza Silva | Psicóloga - CRP ativo<br>
+    <a href="https://wa.me/SEUNUMERO" target="_blank" style="color: var(--lilas); text-decoration: none;">Entre em contato pelo WhatsApp</a>
   </footer>
+
+  <!-- ======== BOTÃO FLUTUANTE WHATSAPP ======== -->
+  <a href="https://wa.me/SEUNUMERO" target="_blank" class="whatsapp-float" title="Fale comigo no WhatsApp">
+    💬
+  </a>
 </body>
 </html>
+
 
